@@ -63,11 +63,12 @@
     };
   } else if (Prototype.Browser.WebKit) {
     // In Safari we have to account for when the user holds down
-    // the "meta" key.
+    // the "meta" key or the "ctrl" key.
     _isButton = function(event, code) {
       switch (code) {
         case 0: return event.which == 1 && !event.metaKey;
-        case 1: return event.which == 1 && event.metaKey;
+        case 1: return event.which == 2 || (event.which == 1 && event.metaKey);
+        case 2: return event.which == 3 || (event.which == 1 && event.ctrlKey);
         default: return false;
       }
     };
