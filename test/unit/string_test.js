@@ -342,6 +342,12 @@ new Test.Unit.Runner({
       toTemplateReplacements: function() { return { name: this.name, job: this.getJob() } }
     };
     this.assertEqual('My name is Stephan, my job is Web developer', new Template(source).evaluate(subject));
+    
+    var strActual = new Template('foo #{bar} baz').evaluate({
+      toTemplateReplacements: function(){ return null; }
+    });
+    this.assertIdentical('foo  baz', strActual);
+    this.assertIdentical('foo', new Template('foo#{bar}').evaluate(null));
   },
 
   testTemplateEvaluationCombined: function() {
@@ -479,11 +485,6 @@ new Test.Unit.Runner({
     }, 1000, 'previous: ');*/
   },
   
-  testToJSON: function() {
-    this.assertEqual('\"\"', ''.toJSON());
-    this.assertEqual('\"test\"', 'test'.toJSON());
-  },
-  
   testIsJSON: function() {
     this.assert(!''.isJSON());
     this.assert(!'     '.isJSON());
@@ -520,10 +521,6 @@ new Test.Unit.Runner({
     this.assertRaise('SyntaxError', function() { invalid.evalJSON() });
     this.assertRaise('SyntaxError', function() { invalid.evalJSON(true) });
 
-    attackTarget = "scared";
-    dangerous.evalJSON();
-    this.assertEqual("attack succeeded!", attackTarget);
-    
     attackTarget = "Not scared!";
     this.assertRaise('SyntaxError', function(){dangerous.evalJSON(true)});
     this.assertEqual("Not scared!", attackTarget);
