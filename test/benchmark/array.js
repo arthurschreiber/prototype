@@ -89,3 +89,7 @@ Benchmark.add("Array#include", 1000, function() {
 Benchmark.add("Array#member", 1000, function() {
   array.member(999);
 });
+
+Benchmark.add("Array#inject", 1000, function() {
+  array.inject(0, function(acc, n) { return acc + n; });
+});
