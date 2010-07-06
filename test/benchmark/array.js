@@ -1,16 +1,18 @@
 var array = $R(1, 1000).toArray();
-var valueArray = [ undefined, 'A', undefined, 'B', null, 'C',
-    undefined, 'A', undefined, 'B', null, 'C',
-    undefined, 'A', undefined, 'B', null, 'C',
-    undefined, 'A', undefined, 'B', null, 'C',
-    undefined, 'A', undefined, 'B', null, 'C',
-    undefined, 'A', undefined, 'B', null, 'C',
-    undefined, 'A', undefined, 'B', null, 'C',
-    undefined, 'A', undefined, 'B', null, 'C',
-    undefined, 'A', undefined, 'B', null, 'C',
-    undefined, 'A', undefined, 'B', null, 'C',
-    undefined, 'A', undefined, 'B', null, 'C',
-    undefined, 'A', undefined, 'B', null, 'C' ];
+var valueArray = [
+  undefined, 'A', undefined, 'B', null, 'C',
+  undefined, 'A', undefined, 'B', null, 'C',
+  undefined, 'A', undefined, 'B', null, 'C',
+  undefined, 'A', undefined, 'B', null, 'C',
+  undefined, 'A', undefined, 'B', null, 'C',
+  undefined, 'A', undefined, 'B', null, 'C',
+  undefined, 'A', undefined, 'B', null, 'C',
+  undefined, 'A', undefined, 'B', null, 'C',
+  undefined, 'A', undefined, 'B', null, 'C',
+  undefined, 'A', undefined, 'B', null, 'C',
+  undefined, 'A', undefined, 'B', null, 'C',
+  undefined, 'A', undefined, 'B', null, 'C'
+];
 var nestedArray = ['frank', ['bob', 'lisa'], ['jill', ['tom', 'sally', ['frank', ['bob', 'lisa'], ['jill', ['tom', 'sally']]]]]];
 var obj = {0:0, 1:1, 2:2, 3:3, 4:4, 5:5, length:6};
 
